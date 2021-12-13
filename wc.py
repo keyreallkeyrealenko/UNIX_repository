@@ -9,16 +9,16 @@ def main():
     It can work in pipes.
     Idk why it has some problems while counting bytes in Russian text (-c param)."""
     parser = argparse.ArgumentParser('Count lines, words or bytes. ')
-    parser.add_argument('-l', help='prints the line count', action='store_true')
-    parser.add_argument('-w', help='prints the word count', action='store_true')
-    parser.add_argument('-c', help='prints the byte count', action='store_true')
+    parser.add_argument('-l', '--lines', help='prints the line count', action='store_true')
+    parser.add_argument('-w', '--words', help='prints the word count', action='store_true')
+    parser.add_argument('-c', '--bytes', help='prints the byte count', action='store_true')
     parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin)
     parser.add_argument('outfile', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
     args = parser.parse_args()
-    if not args.l and not args.c and not args.w:
-        args.l = True
-        args.c = True
-        args.w = True
+    if not args.lines and not args.bytes and not args.words:
+        args.lines = True
+        args.bytes = True
+        args.words = True
     text = args.infile.readlines()
     lines = len(text)
     words = 0
@@ -27,21 +27,22 @@ def main():
         c_bytes += len(line.encode('utf-8'))
         for _ in line.split():
             words += 1
-    if args.l and args.c and args.w:
+    if args.lines and args.bytes and args.words:
         print(f"\t{lines}\t{words}\t{c_bytes} {args.infile.name if args.infile.name != '<stdin>' else ''}")
-    elif args.l and args.c:
+    elif args.lines and args.bytes:
         print(f"\t{lines}\t{c_bytes} {args.infile.name if args.infile.name != '<stdin>' else ''}")
-    elif args.l and args.w:
+    elif args.lines and args.words:
         print(f"\t{lines}\t{words} {args.infile.name if args.infile.name != '<stdin>' else ''}")
-    elif args.w and args.c:
+    elif args.words and args.bytes:
         print(f"\t{words}\t{c_bytes} {args.infile.name if args.infile.name != '<stdin>' else ''}")
-    elif args.c:
+    elif args.bytes:
         print(f"\t{c_bytes} {args.infile.name if args.infile.name != '<stdin>' else ''}")
-    elif args.w:
+    elif args.words:
         print(f"\t{words} {args.infile.name if args.infile.name != '<stdin>' else ''}")
     else:
         print(f"\t{lines} {args.infile.name if args.infile.name != '<stdin>' else ''}")
     return 0
+
 
 if __name__ == '__main__':
     main()

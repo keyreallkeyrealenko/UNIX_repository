@@ -34,5 +34,6 @@ def main():
     cli.columnize(listed_dir, displaywidth=100)
     return 0
 
+
 if __name__ == '__main__':
     main()
