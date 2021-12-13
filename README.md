@@ -1,4 +1,6 @@
-# <center>UNIX utilities in Python</center>
+# <center>UNIX utilities in Python (This repository is incomplete.)</center>
+
+## Description
 
 This repository is an attempt to make up some famous UNIX-commands in Python
 without using subprocess module or external packages.
@@ -30,3 +32,14 @@ It can work in pipes or redirect output to a file. Simple example: ```./ls.py | 
 
 5) <font size="4">__grep.py__</font>. It finds all matches in a text or in stdin it is similar to <font size="4">grep</font>. It can work in pipes, but
 to now (13.12.21) __can't work with regular expressions__ (I'll fix it). Simple example ```./grep.py aa test.txt```
+   
+## The installation guide
+If you want to install this project to your own machine follow these simple steps:
+- clone this repository ```git clone https://github.com/keyreallkeyrealenko/UNIX_utilities.git```
+- create virtual environment in a current directory and call it __venv__. 
+```python3.9 -m venv venv```
+  
+- activate virtual environment 
+```source venv/bin/activate```
+  
+- and use these scripts as written above
