@@ -1,4 +1,4 @@
-#!/Users/kirill/Bioinformatics_Institute/Python/UNIX_utilities/venv/bin/python
+#!./venv/bin/python
 import argparse
 import os
 import shutil
