@@ -2,3 +2,4 @@ venv/
 .idea/
 tester.txt
 untitled.py
+.DS_Store

@@ -41,6 +41,10 @@ Output is in stdout by default, you can redirect it to a file by adding __>__ si
    ```./tail.py -n 10 text.txt > text_tail.txt```. It has one optional argument 
    - __-n__. Number of the lines to show. It is __impossible__ to omit __n__ while using
    our command with this option (e.g ./tail -5 - won't work). By default n=10
+     
+8) <font size="4">__mkdir.py__</font>. This command simply create a directory in the path it took, works as __mkdir__ UNIX-utility. It can create subdirectories.
+Simple example: ```./mkdir.py -p ~/Documents/new_folder/subfolder1```. It has an additional option:
+   - __-p__ allows creating intermediate directories. 
    
 ## The installation guide
 If you want to install this project to your own machine follow these simple steps:
