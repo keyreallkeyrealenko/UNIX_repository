@@ -25,7 +25,7 @@ def main():
     if not file:
         return 0
     if not args.outfile:
-        print(f'usage: cp [-r] source_file target_file')
+        print('usage: cp [-r] source_file target_file')
     if os.path.isdir(args.infile) and not args.r:
         print(f'cp: {args.infile} is a directory (not copied).')
         return 0
