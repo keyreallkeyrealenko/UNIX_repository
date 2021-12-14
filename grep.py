@@ -6,6 +6,18 @@ import re
 import sys
 
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+
 def dir_path(string):
     # Set 1 when grep takes file instead of stdin
     if os.path.isdir(string):
@@ -25,7 +37,7 @@ def main():
     parser.add_argument('infile', nargs='?', type=dir_path, default=sys.stdin)
     parser.add_argument('outfile', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
     args = parser.parse_args()
-    pattern = args.pattern
+    pattern = re.compile(args.pattern)
     if not args.infile:
         return 0
     # Handle the case when input is a text file
@@ -34,18 +46,21 @@ def main():
         with open(args.infile[0]) as f:
             text = f.readlines()
         for line in text:
-            if re.search(pattern, line):
-                found.append(re.sub(pattern, '\033[91m' + rf'{pattern}' + '\033[0m', line))
-        for j in found:
-            if j == found[-1]:
-                print(j, end='\n')
-            else:
-                print(j, end='')
+            line = line.strip()
+            ans = line
+            for m in pattern.finditer(line):
+                ans = ans[:m.start()] + m.group().upper() + ans[m.end():]
+            if ans != line:
+                print(ans)
         return 0
     # Handle the case when input is stdin
     for line in sys.stdin:
-        if re.search(pattern, line):
-            print(re.sub(pattern, '\033[91m' + pattern + '\033[0m', line), end='')
+        ans = line
+        for m in pattern.finditer(line):
+            ans = ans[:m.start()] + m.group().upper() + ans[m.end():]
+        if ans != line:
+            print(ans)
+    return 0
 
 
 if __name__ == '__main__':

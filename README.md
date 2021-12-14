@@ -30,8 +30,8 @@ It can remove folders recursively. Simple example: ```./rm.py -r /System``` ( Do
 4) <font size="4">__sort.py__</font>. It simply sorts file. It works as UNIX-command <font size="4">sort</font>.
 It can work in pipes or redirect output to a file. Simple example: ```./ls.py | ./sort.py > sorted_ls.txt```. Unfortunately, It has no options.
 
-5) <font size="4">__grep.py__</font>. It finds all matches in a text or in stdin it is similar to <font size="4">grep</font>. It can work in pipes, but
-to now (13.12.21) __can't work with regular expressions__ (I'll fix it). Simple example ```./grep.py aa test.txt```
+5) <font size="4">__grep.py__</font>. It finds all matches in a text or in stdin, it is similar to <font size="4">grep</font>. It can work in pipes, but
+to now it can work with regular expressions Simple example ```./grep.py aa test.txt```
    
 ## The installation guide
 If you want to install this project to your own machine follow these simple steps:
@@ -41,5 +41,7 @@ If you want to install this project to your own machine follow these simple step
   
 - activate virtual environment 
 ```source venv/bin/activate```
+  
+- make the scripts executable: ```chmod + x *.py```
   
 - and use these scripts as written above
