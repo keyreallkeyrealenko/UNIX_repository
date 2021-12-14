@@ -17,7 +17,7 @@ def dir_path(string):
 def main():
     """Here we implemented sort UNIX-command. As original one it takes input as a path to a file or to a directory.
     If you want to delete a folder add '-r' flag."""
-    parser = argparse.ArgumentParser('list directory contents.')
+    parser = argparse.ArgumentParser('Remove files/directories')
     parser.add_argument('infile', nargs='?', type=dir_path, default='.')
     parser.add_argument('-r', help='Attempt to remove the file hierarchy rooted in each file argument',
                         action='store_true')

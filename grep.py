@@ -20,7 +20,7 @@ def main():
     """Here we implemented grep UNIX-command. As original one it takes input as a pattern and a path to a file,
     by default it takes pattern from stdin. Output set by default in stdout, you can change it by adding '> filename'
     after a command. It can work in pipes."""
-    parser = argparse.ArgumentParser('list directory contents.')
+    parser = argparse.ArgumentParser('It searches any given input files')
     parser.add_argument('pattern', type=str)
     parser.add_argument('infile', nargs='?', type=dir_path, default=sys.stdin)
     parser.add_argument('outfile', nargs='?', type=argparse.FileType('w'), default=sys.stdout)

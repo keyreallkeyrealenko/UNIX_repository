@@ -30,8 +30,17 @@ It can remove folders recursively. Simple example: ```./rm.py -r /System``` ( Do
 4) <font size="4">__sort.py__</font>. It simply sorts file. It works as UNIX-command <font size="4">sort</font>.
 It can work in pipes or redirect output to a file. Simple example: ```./ls.py | ./sort.py > sorted_ls.txt```. Unfortunately, It has no options.
 
-5) <font size="4">__grep.py__</font>. It finds all matches in a text or in stdin, it is similar to <font size="4">grep</font>. It can work in pipes, but
-to now it can work with regular expressions Simple example ```./grep.py aa test.txt```
+5) <font size="4">__grep.py__</font>. It finds all matches in a text or in stdin, it is similar to <font size="4">grep</font>. It can work in pipes.
+To now, it can work with regular expressions. To now(14.12) I couldn't color a matched text in terminal, I decided to make it UPPER, this is why it has some problems while finding upper case letter/words.  Simple example ```./grep.py aa test.txt```
+   
+6) <font size="4">__cat.py__</font>. This script simulates __cat__ UNIX-utility. I reads file and print its content to stdout by default.
+You can redirect output to a file and also read from stdin. It works in pipes. Simple example: ```./ls.pt | ./cat.py file.txt > new_file.txt```
+   
+7) <font size="4">__tail.py__</font>. It works as original one __tail__ UNIX-command. It takes input as a file or take it from stdin by default.
+Output is in stdout by default, you can redirect it to a file by adding __>__ sign. Simple example: 
+   ```./tail.py -n 10 text.txt > text_tail.txt```. It has one optional argument 
+   - __-n__. Number of the lines to show. It is __impossible__ to omit __n__ while using
+   our command with this option (e.g ./tail -5 - won't work). By default n=10
    
 ## The installation guide
 If you want to install this project to your own machine follow these simple steps:
