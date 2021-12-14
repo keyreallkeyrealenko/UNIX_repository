@@ -46,6 +46,10 @@ Output is in stdout by default, you can redirect it to a file by adding __>__ si
 Simple example: ```./mkdir.py -p ~/Documents/new_folder/subfolder1```. It has an additional option:
    - __-p__ allows creating intermediate directories. 
    
+9) <font size="4">__ln.py__</font>. This command works as UNIX __ln__ utility. It creates hardlink by default. It takes input as a file,
+and output as a path to a link. Simple example: ```./ln.py -s ~/Documents/text.txt ~/Downloads/t.txt``` It has one optional argument:
+   - __-s__ creates a symlink. 
+   
 ## The installation guide
 If you want to install this project to your own machine follow these simple steps:
 - clone this repository ```git clone https://github.com/keyreallkeyrealenko/UNIX_utilities.git```
