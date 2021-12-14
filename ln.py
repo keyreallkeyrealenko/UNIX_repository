@@ -7,7 +7,7 @@ def dir_path(string):
     if os.path.exists(string):
         return string
     else:
-        print(f'ln {string}: No such file or directory')
+        print(f'ln.py {string}: No such file or directory')
         return None
 
 

@@ -50,6 +50,17 @@ Simple example: ```./mkdir.py -p ~/Documents/new_folder/subfolder1```. It has an
 and output as a path to a link. Simple example: ```./ln.py -s ~/Documents/text.txt ~/Downloads/t.txt``` It has one optional argument:
    - __-s__ creates a symlink. 
    
+10) <font size="4">__cp.py__</font>. This command copies files or a directories to a destination. It takes two required argumens:
+input as a file/directory and output as path where to save a file/directory. Generally it works as __cp__ UNIX-command.
+    Simple example: ```./cp.py -r dir ./new_dir```
+    It has one optional argument:
+    - __-r__ allows copying directories.
+   
+11) <font size="4">__mv.py__</font>. It works as original one __mv__ UNIX-command. It moves a file or a folder from input to
+output path. Often it is used just to rename a file/folder.
+    
+12) 
+   
 ## The installation guide
 If you want to install this project to your own machine follow these simple steps:
 - clone this repository ```git clone https://github.com/keyreallkeyrealenko/UNIX_utilities.git```

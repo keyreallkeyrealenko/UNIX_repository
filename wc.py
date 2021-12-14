@@ -3,6 +3,7 @@ import sys
 import argparse
 
 
+
 def main():
     """Here we implemented wc UNIX-command. As original one it takes input from a file or from stdin.
     Output set by default to direct in stdout, you can change it by adding '> filename'  after a command.
