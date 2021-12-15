@@ -46,7 +46,7 @@ def main():
         for m in pattern.finditer(line):
             ans = ans[:m.start()] + m.group().upper() + ans[m.end():]
         if ans != line:
-            print(ans)
+            print(ans, end='')
     return 0
 
 

@@ -1,9 +1,9 @@
-# <center>UNIX utilities in Python (This repository is incomplete.)</center>
+# <center>UNIX utilities in Python </center>
 
 ## Description
 
-This repository is an attempt to make up some famous UNIX-commands in Python
-without using subprocess module or external packages.
+This repository is an attempt to make up some popular UNIX-commands in Python
+without using subprocess module or external packages. All scripts were tested on __MacOS Monetery 12.01.01__ using __Python 3.9.0__  interpreter.
 
 Here you can find the following utilities:
 
@@ -34,7 +34,7 @@ It can work in pipes or redirect output to a file. Simple example: ```./ls.py | 
 To now, it can work with regular expressions. To now(14.12) I couldn't color a matched text in terminal, I decided to make it UPPER, this is why it has some problems while finding upper case letter/words.  Simple example ```./grep.py aa test.txt```
    
 6) <font size="4">__cat.py__</font>. This script simulates __cat__ UNIX-utility. I reads file and print its content to stdout by default.
-You can redirect output to a file and also read from stdin. It works in pipes. Simple example: ```./ls.pt | ./cat.py file.txt > new_file.txt```
+You can redirect output to a file and also read from stdin. It works in pipes. Simple example: ```./ls.py | ./cat.py file.txt > new_file.txt```
    
 7) <font size="4">__tail.py__</font>. It works as original one __tail__ UNIX-command. It takes input as a file or take it from stdin by default.
 Output is in stdout by default, you can redirect it to a file by adding __>__ sign. Simple example: 
@@ -59,17 +59,42 @@ input as a file/directory and output as path where to save a file/directory. Gen
 11) <font size="4">__mv.py__</font>. It works as original one __mv__ UNIX-command. It moves a file or a folder from input to
 output path. Often it is used just to rename a file/folder.
     
-12) 
+12) <font size="4">__uniq.py__</font>. This script works as original one __uniq__ UNIX-utility. It takes an argument as a file,
+or takes it by default as stdin. Output by default set to direct to stdout, you can redirect it wit __">"__ sign. It can work in pipes
+    but it has some problems while using in pipes with __head__ command: __the broken pipe__ error appears (Idk why). Simple example ```./uniq.py -u test.txt```
+    It has one option:
+    - __-u__ means to display only unique lines in a whole file. By default it displays unique neighbors. 
    
 ## The installation guide
 If you want to install this project to your own machine follow these simple steps:
-- clone this repository ```git clone https://github.com/keyreallkeyrealenko/UNIX_utilities.git```
+- clone this repository 
+```
+  git clone https://github.com/keyreallkeyrealenko/UNIX_utilities.git
+  ```
 - create virtual environment in a current directory and call it __venv__. 
-```python3.9 -m venv venv```
+```
+python3.9 -m venv venv
+```
   
 - activate virtual environment 
-```source venv/bin/activate```
+```
+source venv/bin/activate
+```
   
 - make the scripts executable: ```chmod + x *.py```
   
 - and use these scripts as written above
+
+## NOTES 
+
+1) If you want to add all the scripts to PATH variable just run script __install.py__ inside active environment.
+Use this command if you're in the directory where all the scripts are located:
+   ```
+   ./install.py
+   ```
+
+2) Many scripts have some problems with __head__ UNIX-utility in pipes. For example:
+```cat.py test.txt | head``` It will work but in the end it will raise and error: __Broken pipe__.
+   
+
+   
